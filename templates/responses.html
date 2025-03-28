@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Responses</title>
+</head>
+
+<body>
+    <h1>Survey Responses</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Question 1</th>
+            <th>Question 2</th>
+            <th>Question 3</th>
+            <th>Question 4</th>
+            <th>Question 5</th>
+            <th>Question 6</th>
+            <th>Question 7</th>
+            <th>Question 8</th>
+            <th>Question 9</th>
+            <th>Question 10</th>
+        </tr>
+        {% for response in responses %}
+        <tr>
+            <td>{{ response.question_1 }}</td>
+            <td>{{ response.question_2 }}</td>
+            <td>{{ response.question_3 }}</td>
+            <td>{{ response.question_4 }}</td>
+            <td>{{ response.question_5 }}</td>
+            <td>{{ response.question_6 }}</td>
+            <td>{{ response.question_7 }}</td>
+            <td>{{ response.question_8 }}</td>
+            <td>{{ response.question_9 }}</td>
+            <td>{{ response.question_10 }}</td>
+
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>

@@ -4,18 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Science Project</title>
+    <title>Data Science Survey</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
-    <h1>Welcome to the Data Science Project</h1>
-    <form id="user-form">
-        <label for="user-input">Enter some data:</label>
-        <input type="text" id="user-input" name="user-input" required>
-        <button type="submit">Submit</button>
-    </form>
-    <div id="result"></div>
+    <div class="container">
+        <h1>10-Question Survey</h1>
+        <form id="survey-form">
+            {% for i in range(1, 11) %}
+            <div class="question-container">
+                <label for="question{{ i }}">Question {{ i }}:</label>
+                <input type="text" id="question{{ i }}" name="question{{ i }}" required>
+            </div>
+            {% endfor %}
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+        <div id="result"></div>
+    </div>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 
