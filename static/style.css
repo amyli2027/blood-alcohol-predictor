@@ -46,3 +46,43 @@ button:hover {
     height: auto;
     max-width: 300px;
 }
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+label, input, select {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.inline-group {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.inline-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+label {
+    min-width: 150px; /* Ensures labels stay aligned */
+}
+
+input, select {
+    flex-grow: 1;
+}
+
+.center-container {
+    display: flex;
+    flex-direction: column; /* Stack label and dropdown */
+    align-items: center; /* Center horizontally */
+    text-align: center; /* Ensure text aligns properly */
+    margin: 15px 0; /* Add spacing */
+}

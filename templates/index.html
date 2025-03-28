@@ -23,29 +23,40 @@
             <h2>First, some information about you:</h2>
             <form id="survey-form">
                 <label>Sex assigned at birth:</label>
-                <input type="radio" name="sex" value="male"> Male
-                <input type="radio" name="sex" value="female"> Female
+                <div class="inline-group">
+                    <input type="radio" name="sex" value="male"> Male
+                    <input type="radio" name="sex" value="female"> Female
+                </div>
 
-                <label>Age:</label>
-                <input type="number" id="age" min="15" max="125">
+                <div class="inline-container">
+                    <label>Age:</label>
+                    <input type="number" id="age" min="15" max="125">
+                </div>
 
-                <label>Height (cm):</label>
-                <input type="number" id="height">
+                <div class="inline-container">
+                    <label>Height (cm):</label>
+                    <input type="number" id="height">
+                </div>
 
-                <label>Weight (kg):</label>
-                <input type="number" id="weight">
+                <div class="inline-container">
+                    <label>Weight (kg):</label>
+                    <input type="number" id="weight">
+                </div>
 
-                <label>How often do you practice strength training?</label>
-                <select id="strength_training">
-                    <option value="never">Never</option>
-                    <option value="rarely">Rarely</option>
-                    <option value="sometimes">Sometimes</option>
-                    <option value="often">Often</option>
-                </select>
+                <div class="center-container">
+                    <label>How often do you practice strength training?</label>
+                    <select id="strength_training">
+                        <option value="never">Never</option>
+                        <option value="rarely">Rarely</option>
+                        <option value="sometimes">Sometimes</option>
+                        <option value="often">Often</option>
+                    </select>
+                </div>
 
                 <button type="button" onclick="showScreen(3)">Next</button>
             </form>
         </div>
+
 
         <!-- Screen 3: Drinking Experience -->
         <div id="screen3" class="screen">
