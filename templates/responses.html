@@ -12,30 +12,28 @@
     <table border="1">
         <tr>
             <th>ID</th>
-            <th>Question 1</th>
-            <th>Question 2</th>
-            <th>Question 3</th>
-            <th>Question 4</th>
-            <th>Question 5</th>
-            <th>Question 6</th>
-            <th>Question 7</th>
-            <th>Question 8</th>
-            <th>Question 9</th>
-            <th>Question 10</th>
+            <th>Sex</th>
+            <th>Age</th>
+            <th>Height</th>
+            <th>Weight</th>
+            <th>Strength Training</th>
+            <th>Desired Drunkenness</th>
+            <th>Wine %</th>
+            <th>Beer %</th>
+            <th>Other %</th>
         </tr>
         {% for response in responses %}
         <tr>
-            <td>{{ response.question_1 }}</td>
-            <td>{{ response.question_2 }}</td>
-            <td>{{ response.question_3 }}</td>
-            <td>{{ response.question_4 }}</td>
-            <td>{{ response.question_5 }}</td>
-            <td>{{ response.question_6 }}</td>
-            <td>{{ response.question_7 }}</td>
-            <td>{{ response.question_8 }}</td>
-            <td>{{ response.question_9 }}</td>
-            <td>{{ response.question_10 }}</td>
-
+            <td>{{ response.id }}</td>
+            <td>{{ response.sex }}</td>
+            <td>{{ response.age }}</td>
+            <td>{{ response.height }}</td>
+            <td>{{ response.weight }}</td>
+            <td>{{ response.strength_training }}</td>
+            <td>{{ response.desired_drunkenness }}</td>
+            <td>{{ response.wine_percentage }}</td>
+            <td>{{ response.beer_percentage }}</td>
+            <td>{{ response.other_percentage }}</td>
         </tr>
         {% endfor %}
     </table>

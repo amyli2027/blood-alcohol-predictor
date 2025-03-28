@@ -1,10 +1,22 @@
-document.getElementById("survey-form").addEventListener("submit", async (event) => {
-    event.preventDefault();  // Prevents page reload
+function showScreen(screenNumber) {
+    let screens = document.querySelectorAll('.screen');
+    screens.forEach(screen => screen.classList.remove('active'));
 
-    const formData = {};
-    for (let i = 1; i <= 10; i++) {
-        formData[`question${i}`] = document.getElementById(`question${i}`).value;
-    }
+    document.getElementById(`screen${screenNumber}`).classList.add('active');
+}
+
+async function submitForm() {
+    const formData = {
+        sex: document.querySelector('input[name="sex"]:checked')?.value,
+        age: document.getElementById("age").value,
+        height: document.getElementById("height").value,
+        weight: document.getElementById("weight").value,
+        strength_training: document.getElementById("strength_training").value,
+        desired_drunkenness: document.getElementById("desired_drunkenness").value,
+        wine_percentage: document.getElementById("wine_percentage").value,
+        beer_percentage: document.getElementById("beer_percentage").value,
+        other_percentage: document.getElementById("other_percentage").value
+    };
 
     const resultDiv = document.getElementById("result");
 
@@ -16,11 +28,9 @@ document.getElementById("survey-form").addEventListener("submit", async (event) 
         });
 
         const data = await response.json();
-        resultDiv.innerHTML = Object.entries(data)
-            .map(([question, answer]) => `<p>${question}: ${answer}</p>`)
-            .join("");
+        resultDiv.innerHTML = `<p>${data.message}</p>`;
     } catch (error) {
         resultDiv.textContent = "An error occurred.";
         console.error(error);
     }
-});
+}

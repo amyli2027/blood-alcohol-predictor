@@ -4,24 +4,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Science Survey</title>
+    <title>Drink Volume Calculator</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
     <div class="container">
-        <h1>10-Question Survey</h1>
-        <form id="survey-form">
-            {% for i in range(1, 11) %}
-            <div class="question-container">
-                <label for="question{{ i }}">Question {{ i }}:</label>
-                <input type="text" id="question{{ i }}" name="question{{ i }}" required>
+        <h1>Drink Volume Calculator</h1>
+        <p>Description of website project + disclaimer</p>
+
+        <!-- Screen 1 -->
+        <div id="screen1" class="screen active">
+            <button class="start-btn" onclick="showScreen(2)">Start</button>
+        </div>
+
+        <!-- Screen 2: Personal Information -->
+        <div id="screen2" class="screen">
+            <h2>First, some information about you:</h2>
+            <form id="survey-form">
+                <label>Sex assigned at birth:</label>
+                <input type="radio" name="sex" value="male"> Male
+                <input type="radio" name="sex" value="female"> Female
+
+                <label>Age:</label>
+                <input type="number" id="age" min="15" max="125">
+
+                <label>Height (cm):</label>
+                <input type="number" id="height">
+
+                <label>Weight (kg):</label>
+                <input type="number" id="weight">
+
+                <label>How often do you practice strength training?</label>
+                <select id="strength_training">
+                    <option value="never">Never</option>
+                    <option value="rarely">Rarely</option>
+                    <option value="sometimes">Sometimes</option>
+                    <option value="often">Often</option>
+                </select>
+
+                <button type="button" onclick="showScreen(3)">Next</button>
+            </form>
+        </div>
+
+        <!-- Screen 3: Drinking Experience -->
+        <div id="screen3" class="screen">
+            <h2>Next, about your drinking experience:</h2>
+            <label>What is your desired level of drunkenness?</label>
+            <input type="text" id="desired_drunkenness">
+
+            <div class="graph">
+                <img src="{{ url_for('static', filename='bac_chart.png') }}" alt="BAC Time Graph">
             </div>
-            {% endfor %}
-            <button type="submit" class="submit-btn">Submit</button>
-        </form>
+
+            <p>Information about risks...</p>
+            <button onclick="showScreen(2)">Back</button>
+            <button onclick="showScreen(4)">Next</button>
+        </div>
+
+        <!-- Screen 4: Drink Recommendations -->
+        <div id="screen4" class="screen">
+            <h2>Here's how much you should drink:</h2>
+            <label>Wine (%):</label>
+            <input type="number" id="wine_percentage">
+
+            <label>Beer (%):</label>
+            <input type="number" id="beer_percentage">
+
+            <label>Other (input %):</label>
+            <input type="number" id="other_percentage">
+
+            <button onclick="showScreen(3)">Back</button>
+            <button type="button" onclick="submitForm()">Submit</button>
+        </div>
+
         <div id="result"></div>
     </div>
+
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 
