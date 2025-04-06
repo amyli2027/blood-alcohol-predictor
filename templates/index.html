@@ -62,7 +62,11 @@
         <div id="screen3" class="screen">
             <h2>Next, about your drinking experience:</h2>
             <label>What is your desired level of drunkenness?</label>
-            <input type="text" id="desired_drunkenness">
+            <div class="slidecontainer">
+                <input type="range" min="0" max="10" value="5" class="slider" id="myRange">
+                <span id="demo">5</span>
+            </div>
+
 
             <div class="graph">
                 <img src="{{ url_for('static', filename='chicken.jpg') }}" alt="BAC Time Graph">

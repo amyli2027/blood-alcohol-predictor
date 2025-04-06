@@ -2,7 +2,13 @@ function showScreen(screenNumber) {
     let screens = document.querySelectorAll('.screen');
     screens.forEach(screen => screen.classList.remove('active'));
 
-    document.getElementById(`screen${screenNumber}`).classList.add('active');
+    const targetScreen = document.getElementById(`screen${screenNumber}`);
+    targetScreen.classList.add('active');
+
+    // Initialize slider value display if entering screen 3
+    if (screenNumber === 3) {
+        initSlider();
+    }
 }
 
 async function submitForm() {
@@ -32,5 +38,17 @@ async function submitForm() {
     } catch (error) {
         resultDiv.textContent = "An error occurred.";
         console.error(error);
+    }
+}
+
+function initSlider() {
+    const slider = document.getElementById("myRange");
+    const output = document.getElementById("demo");
+
+    if (slider && output) {
+        output.textContent = slider.value;
+        slider.oninput = function () {
+            output.textContent = this.value;
+        };
     }
 }
