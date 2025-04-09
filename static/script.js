@@ -5,7 +5,6 @@ function showScreen(screenNumber) {
     const targetScreen = document.getElementById(`screen${screenNumber}`);
     targetScreen.classList.add('active');
 
-    // Initialize slider value display if entering screen 3
     if (screenNumber === 3) {
         initSlider();
     }
