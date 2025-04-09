@@ -41,7 +41,7 @@ async function submitForm() {
 }
 
 function initSlider() {
-    const slider = document.getElementById("myRange");
+    const slider = document.getElementById("desired_drunkenness");
     const output = document.getElementById("demo");
 
     if (slider && output) {
