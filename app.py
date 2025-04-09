@@ -6,7 +6,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///responses.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
-# Define the Response model
 class Response(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     sex = db.Column(db.String(10))
@@ -19,7 +18,6 @@ class Response(db.Model):
     beer_percentage = db.Column(db.Float)
     other_percentage = db.Column(db.Float)
 
-# Create database tables
 with app.app_context():
     db.create_all()
 
