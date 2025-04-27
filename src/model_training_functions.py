@@ -2,6 +2,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error
 from sklearn.metrics import r2_score
+import joblib
 
 def test_regression_model(dataset, features):
   X = dataset[features]
@@ -19,3 +20,13 @@ def results(dataset, features):
   print(f"Features: {features}")
   print(f"Mean Squared Error: {mse}")
   print(f"R2 score: {r2}")
+
+def build_model(dataset, features, target):
+  X = dataset[features]
+  Y = dataset[target]
+  model = LinearRegression()
+  model.fit(X, Y)
+  return model
+
+def save_model(model, path):
+  joblib.dump(model, path)
