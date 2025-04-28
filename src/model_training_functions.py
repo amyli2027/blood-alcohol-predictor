@@ -4,7 +4,6 @@ from sklearn.metrics import mean_squared_error
 from sklearn.metrics import r2_score
 from sklearn.model_selection import cross_val_score
 import matplotlib.pyplot as plt
-import joblib
 import os
 
 def test_regression_model(dataset, features, target_column_name):
@@ -31,9 +30,6 @@ def build_model(dataset, features, target):
   model = LinearRegression()
   model.fit(X, Y)
   return model
-
-def save_model(model, path):
-  joblib.dump(model, path)
 
 def cross_validate_model(dataset, features, target, folds, metric):
   X = dataset[features]
