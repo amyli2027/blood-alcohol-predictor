@@ -1,18 +1,19 @@
-# Project Title
+# Anti-DUI
 
-A short description of the project.  
-Example: A machine learning project to predict housing prices based on various features.
+## Description
+
+This project uses data on individual factors (including body weight, gender, and number of drinks consumed) alongside measured Blood Alcohol Concentration (BAC) values to build a regression model that predicts BAC levels. The model is incorporated into a web-based tool designed to estimate how many drinks an individual should consume to reach a specific BAC or intoxication level, empowering users to make responsible and informed drinking decisions. The project includes data cleaning, exploratory analysis, model evaluation, and visualization of results.
 
 ## Project Structure
 
 - `data/raw/` - Original data
 - `data/processed/` - Cleaned data
-- `notebooks/` - Jupyter notebooks for data cleaning and model training
+- `notebooks/` - Jupyter notebooks for exploratory data analysis, data pre-processing, model training, evaluation, and selection
 - `src/` - Python scripts with helper functions
-- `outputs/` - Saved models, plots, and predictions
-- `results/` - Final evaluation metrics and summary tables
+- `output/` - Saved models, plots, and performance metrics
+- `website/` - Code for website estimating drinks required to achieve desired intoxication level
 
-## Getting Started
+## How to Run
 
 1. Clone the repository:
     ```bash
@@ -33,8 +34,9 @@ See `requirements.txt` for all dependencies.
 
 ## Results
 
-Summarize key results here.  
-Example: Achieved 89% R² on the test set.
+Final Model (Linear Regression):
+- R2 Value: 0.9518
+- MSE: 0.0001
 
 ## License
 
