@@ -30,9 +30,6 @@ def build_model(dataset, features, target):
   Y = dataset[target]
   model = LinearRegression()
   model.fit(X, Y)
-  y_pred = model.predict(X)
-  mse = mean_squared_error(Y, y_pred)
-  r2 = r2_score(Y, y_pred)
   return model
 
 def save_model(model, path):
@@ -49,6 +46,7 @@ def cross_validate_model(dataset, features, target, folds, metric):
 
 def save_model_summary(model, X, y, output_path):
   # Predict
+  features = X.columns
   y_pred = model.predict(X)
 
   # Calculate metrics
@@ -60,9 +58,9 @@ def save_model_summary(model, X, y, output_path):
   coefficients = model.coef_
 
   # Build equation string
-  equation_parts = [f"{coef:.4f}*x{i}" for i, coef in enumerate(coefficients)]
+  equation_parts = [f"({coef:.6f} x {features[i]})" for i, coef in enumerate(coefficients)]
   equation = " + ".join(equation_parts)
-  equation = f"y = {intercept:.4f} + {equation}"
+  equation = f"Predicted BAC = {intercept:.6f} + {equation}"
 
   # Make sure output folder exists
   os.makedirs(os.path.dirname(output_path), exist_ok=True)
@@ -83,5 +81,6 @@ def plot_model_results(model, dataset, features, target_column_name):
   plt.ylabel('Predicted BAC')
   plt.title('Actual vs Predicted BAC')
   plt.plot([Y.min(), Y.max()], [Y.min(), Y.max()], 'r--')
-  plt.show()
+  plt.savefig('../output/actual_vs_predicted_plot.png', dpi=300)
+  plt.close()
 

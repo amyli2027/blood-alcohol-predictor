@@ -1,5 +1,5 @@
 Model Equation:
-y = -24.5555 + 0.0005*x0 + 666.2331*x1
+Predicted BAC = 0.039863 + (-0.000001 x Bodyweight_grams) + (0.001427 x Ethanol_grams)
 
-R2 Score: 0.9537
-MSE: 41.1156
+R2 Score: 0.9518
+MSE: 0.0001
