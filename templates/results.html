@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Results</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        canvas {
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Results</h1>
+        <h2>Estimated number of US standard drinks needed: {{ num_drinks }}</h2>
+
+        <canvas id="bacChart" width="400" height="300"></canvas>
+
+        <script>
+            const ctx = document.getElementById('bacChart').getContext('2d');
+            const bacData = {
+                labels: {{ bac_over_time | map(attribute = 0) | list | tojson }},
+            datasets: [{
+                label: 'BAC Over Time',
+                data: {{ bac_over_time | map(attribute = 1) | list | safe }},
+                fill: false,
+                borderColor: 'rgb(75, 192, 192)',
+                tension: 0.1
+                }]
+            };
+
+            const bacChart = new Chart(ctx, {
+                type: 'line',
+                data: bacData,
+                options: {
+                    scales: {
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'BAC'
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Time (hours)'
+                            }
+                        }
+                    }
+                }
+            });
+        </script>
+        <a href="/amounts" class="next-button">See Drink Amounts</a>
+
+        <style>
+            .next-button {
+                display: block;
+                margin: 30px auto 0;
+                padding: 10px 20px;
+                background-color: #007bff;
+                color: white;
+                text-align: center;
+                border-radius: 5px;
+                text-decoration: none;
+                width: 180px;
+                font-size: 16px;
+            }
+
+            .next-button:hover {
+                background-color: #0056b3;
+            }
+        </style>
+    </div>
+</body>
+
+</html>
