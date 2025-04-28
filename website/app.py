@@ -6,7 +6,7 @@ app = Flask(__name__)
 app.secret_key = "your_secret_key"
 
 # Load your trained BAC model
-with open('ohio_bac_model.pkl', 'rb') as f:
+with open('ohio_ethanol_model.pkl', 'rb') as f:
     bac_model = pickle.load(f)
 
 @app.route("/")
