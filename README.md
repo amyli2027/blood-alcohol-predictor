@@ -27,6 +27,7 @@ This project uses data on individual factors (including body weight, gender, and
     ```
 
 3. Open the notebooks in the `notebooks/` folder to run the project.
+   Use the README.md in notebooks to guide your exploration of the notebooks
 
 ## Requirements
 
