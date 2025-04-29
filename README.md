@@ -29,6 +29,15 @@ This project uses data on individual factors (including body weight, gender, and
 3. Open the notebooks in the `notebooks/` folder to run the project.
    Use the README.md in notebooks to guide your exploration of the notebooks
 
+# How to Run Website
+
+1. Clone the repository and install the required libraries(skip this step if you have already done this when running notebook)
+2. Go to the website folder:
+   ```cd website```
+3. run
+```python app.py```
+4. This will run the application locally, copy and paste the link generated in terminal to visit the website. 
+
 ## Requirements
 
 See `requirements.txt` for all dependencies.
