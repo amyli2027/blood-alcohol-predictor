@@ -29,12 +29,12 @@ This project uses data on individual factors (including body weight, gender, and
 3. Open the notebooks in the `notebooks/` folder to run the project.
    Use the README.md in notebooks to guide your exploration of the notebooks
 
-## How to Run Website
+4. To run the web-based drink calculator tool:
     ```bash
     cd website
     python app.py
     ```
-Copy and paste the link generated in terminal to visit the website. 
+   Paste the link generated in the terminal in your browser
 
 ## Requirements
 
