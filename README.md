@@ -34,7 +34,7 @@ This project uses data on individual factors (including body weight, gender, and
     cd website
     python app.py
     ```
-   Paste the link generated in the terminal in your browser
+   Paste the link generated in the terminal into your browser
 
 ## Requirements
 
