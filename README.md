@@ -17,8 +17,8 @@ This project uses data on individual factors (including body weight, gender, and
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/your-repo-name.git
-    cd your-repo-name
+    git clone https://github.com/amyli2027/blood-alcohol-predictor.git
+    cd blood-alcohol-predictor
     ```
 
 2. Install the required libraries:
