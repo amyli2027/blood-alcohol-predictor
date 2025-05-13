@@ -46,6 +46,13 @@ Final Model (Linear Regression):
 - R2 Value: 0.9518
 - MSE: 0.0001
 
+## Demo 
+
+[![Watch the demo](https://img.youtube.com/vi/qew1ZxdORTc/0.jpg)](https://youtu.be/qew1ZxdORTc)
+
+---
+
+
 ## License
 
 This project is open-source under the [MIT License](LICENSE).
