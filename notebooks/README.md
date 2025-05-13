@@ -21,8 +21,8 @@ Includes the same process but for the other dataset.
 ### 6. Model_Selection.ipynb
 Explains why we chose to base our model on the Ohio dataset not the Australian one and saves our Ohio dataset model for future use along with its metrics.
 
-### 7. Test_Widmark_Equation.ipynb (optional)
-A miscellaneous notebook that tests the standard BAC equation (a.k.a. the Widmark equation) against our dataset.
+### 7. Benchmark_Against_Widmark_Equation.ipynb
+Benchmarks the performance of our model vs. the standard model (Widmark Equation) on unseen data.
 
 ## Notes
 - Several notebooks use functions from the file: model_training_functions.py in the src folder
